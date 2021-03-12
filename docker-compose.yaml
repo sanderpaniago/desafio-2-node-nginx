@@ -22,11 +22,11 @@ services:
     container_name: app
     image: sanderpaniago/node-desafio-2
     hostname: app
-    entrypoint: dockerize -wait tcp://db:3306 -timeout 20s node server.js
+    entrypoint: node server.js
     networks: 
       - code-net
     volumes: 
-      - ./nodejs:/usr/src/app
+      - ./nodejs:/home/node/app
     tty: true
     depends_on: 
       - db
